@@ -1,30 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-/**
- *
- * <div id="parent">
- *     <div id="child">
- *         <h1 id="heading-1">Hello, React!</h1>
- *         <h2 id="heading-2">Hello, React!</h1>
- *    </div>
- * </div>
- *
- */
+
+//JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to HTML.
+//It allows you to write HTML-like code within JavaScript, which is then transformed into React elements.
+//JSX makes it easier to visualize the structure of the UI and is commonly used in React applications.
+//JSX is not required to use React, but it is widely adopted because it makes the code more readable and maintainable.
+//JSX is transpiled to JavaScript using tools like Babel, which converts JSX syntax into React.createElement calls.
+//This allows React to create and manage the virtual DOM efficiently.
+
+//JSX => Babel transpiles it to React.createElement => ReactElement-JS Object => HTMLElement(render)
+const jsxHeading = (
+  <h1 className="head" tabIndex="5">
+    Hello, JSX!
+  </h1>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const heading1 = React.createElement(
-  "h1",
-  { id: "heading-1" },
-  "Hello, React!"
-);
-const heading2 = React.createElement(
-  "h2",
-  { id: "heading-2" },
-  "Hello, React!"
-);
-
-const child = React.createElement("div", { id: "child" }, [heading1, heading2]);
-const parent = React.createElement("div", { id: "parent" }, child);
-
-root.render(parent);
+root.render(jsxHeading);
