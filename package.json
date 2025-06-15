@@ -1,0 +1,31 @@
+{
+  "name": "hello-react",
+  "version": "1.0.0",
+  "description": "Hello React App",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Deepank Bhardwaj",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 safari versions",
+    "last 2 edge versions",
+    "last 2 opera versions",
+    "not dead",
+    "not < 0.2%"
+  ]
+}
