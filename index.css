@@ -5,3 +5,73 @@
 #heading-2 {
     color: chartreuse;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+}
+/* .nav-item {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+} */
+
+.nav-item > ul {
+    /* font-size: 24px; */
+    /* display: flex;
+    list-style-type: none;
+    flex-direction: row; */
+    /* padding: 0px 20px;
+    margin: 0; */
+
+}
+
+.nav-items-ul{
+    font-size: 24px;
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    padding: 0px 20px;
+    margin: 50px 0;
+    gap: 20px;
+}
+
+.nav-item > ul > li {
+    padding: 10px;
+    margin: 10px;
+}
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    /* padding: 20px; */
+}
+
+.res-card {
+    margin: 5px;
+    width: 200px;
+    /* height: 300px; */
+}
+
+.res-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
+
+}
+
+
+.search {
+    padding: 10px;
+}
+
+.res-logo {
+    width: 198px;
+    height: 150px;
+}
