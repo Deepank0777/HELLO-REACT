@@ -1,13 +1,22 @@
 import restaurantData from "../utils/restaurantData.json";
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Local State Variable
   const [restaurantList, setRestaurantList] = useState(restaurantData);
 
-  //Normal JS variable
-  // let restaurantList = restaurantData;
+  useEffect(() => {
+    // Simulating an API call
+    const fetchRestaurants = () => {
+      // Here you would typically fetch data from an API
+      // For this example, we are using static data
+      setRestaurantList(restaurantData);
+    };
+
+    fetchRestaurants();
+  }, []);
 
   const filterTopRestaurants = (restaurants) => {
     const topRestaurantList = restaurants.filter(
@@ -15,6 +24,12 @@ const Body = () => {
     );
     setRestaurantList(topRestaurantList);
   };
+
+  //conditional rendering
+  if (restaurantList.length === 0) {
+    //you can add a loading spinner or message here
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
