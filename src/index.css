@@ -75,3 +75,13 @@
     width: 198px;
     height: 150px;
 }
+
+.filter-btn {
+    padding: 10px;
+    margin: 10px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
