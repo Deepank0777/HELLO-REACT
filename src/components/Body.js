@@ -5,13 +5,20 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Local State Variable
-  const [restaurantList, setRestaurantList] = useState(restaurantData);
+  const [restaurantList, setRestaurantList] = useState([]);
 
   useEffect(() => {
     // Simulating an API call
     const fetchRestaurants = () => {
       // Here you would typically fetch data from an API
       // For this example, we are using static data
+
+      //sleep for 10 seconds to simulate network delay
+      setTimeout(() => {
+        setRestaurantList(restaurantData);
+      }, 10000);
+
+      // After the delay, set the restaurant data
       setRestaurantList(restaurantData);
     };
 
@@ -25,13 +32,9 @@ const Body = () => {
     setRestaurantList(topRestaurantList);
   };
 
-  //conditional rendering
-  if (restaurantList.length === 0) {
-    //you can add a loading spinner or message here
-    return <Shimmer />;
-  }
-
-  return (
+  return restaurantList.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
         <button
