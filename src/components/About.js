@@ -1,3 +1,6 @@
+import UserFunctionBasedComponent from "./UserFunctionBasedComponent";
+import UserClassBasedComponent from "./UserClassBasedComponent";
+
 const About = () => {
   return (
     <div className="about">
@@ -11,6 +14,9 @@ const About = () => {
         Our menu features a variety of dishes made from the freshest
         ingredients, and we take pride in our commitment to quality and flavor.
       </p>
+
+      <UserFunctionBasedComponent name={"User Func"} />
+      <UserClassBasedComponent name={"User Class"} />
     </div>
   );
 };
