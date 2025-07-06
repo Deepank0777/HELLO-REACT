@@ -5,6 +5,11 @@ const User = (props) => {
 
   useEffect(() => {
     // Simulating an API call or any side effect
+
+    return () => {
+      console.log("Component will unmount called");
+      // Cleanup code can go here, like removing event listeners
+    };
   }, []);
 
   return (
