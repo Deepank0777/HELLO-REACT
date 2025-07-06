@@ -76,8 +76,12 @@
     height: 150px;
 }
 
+.filter{    
+    display: flex;
+    height: auto;
+}
+
 .filter-btn {
-    padding: 10px;
     margin: 10px;
     background-color: orangered;
     color: white;

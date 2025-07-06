@@ -5,7 +5,10 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   //Local State Variable
+  //Whenever state variables update, the component re-renders => react triggers a reconciliation cycle
   const [restaurantList, setRestaurantList] = useState([]);
+  const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     // Simulating an API call
@@ -20,6 +23,7 @@ const Body = () => {
 
       // After the delay, set the restaurant data
       setRestaurantList(restaurantData);
+      setFilteredRestaurantList(restaurantData);
     };
 
     fetchRestaurants();
@@ -37,6 +41,28 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            placeholder="Search for restaurants"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              const filteredRestaurants = restaurantList.filter((restaurant) =>
+                restaurant.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase())
+              );
+              setFilteredRestaurantList(filteredRestaurants);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={filterTopRestaurants.bind(null, restaurantList)}
@@ -45,7 +71,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {restaurantList.map((res, idx) => (
+        {filteredRestaurantList.map((res, idx) => (
           <RestaurantCard key={res.info.id} resData={res} />
         ))}
       </div>
