@@ -36,4 +36,5 @@
 
 # react-lifecycle-methods-diagram
 
+[Source](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 ![React Lifecycle Methods Diagram](./react-lifecycle-methods-diagram.png)
