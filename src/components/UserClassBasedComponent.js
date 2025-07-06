@@ -18,6 +18,15 @@ class UserClassBasedComponent extends React.Component {
     // Simulating an API call or any side effect
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.name, "Component did update called");
+  }
+
+  componentWillUnmount() {
+    console.log(this.props.name, "Component will unmount called");
+    // Cleanup code can go here, like removing event listeners
+  }
+
   render() {
     const { count, count2 } = this.state;
     console.log(this.props.name, "Render called");
