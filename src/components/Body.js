@@ -3,6 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect, use } from "react";
 import Shimmer from "./Shimmer";
 
+import { Link } from "react-router";
+
 const Body = () => {
   //Local State Variable
   //Whenever state variables update, the component re-renders => react triggers a reconciliation cycle
@@ -72,7 +74,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurantList.map((res, idx) => (
-          <RestaurantCard key={res.info.id} resData={res} />
+          <Link to={"/restaurants/" + res.info.id} key={res.info.id}>
+            <RestaurantCard key={res.info.id} resData={res} />{" "}
+          </Link>
         ))}
       </div>
     </div>
