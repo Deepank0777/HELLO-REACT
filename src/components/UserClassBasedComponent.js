@@ -3,16 +3,24 @@ import React from "react";
 class UserClassBasedComponent extends React.Component {
   constructor(props) {
     super(props);
-    console.log("user class based component props", props);
 
     this.state = {
       count: 0,
       count2: 0,
       count3: 0,
     };
+
+    console.log(props.name, "Constructor called");
   }
+
+  componentDidMount() {
+    console.log(this.props.name, "Component did mount called");
+    // Simulating an API call or any side effect
+  }
+
   render() {
     const { count, count2 } = this.state;
+    console.log(this.props.name, "Render called");
     return (
       <div className="user-card">
         <h1>Count: {count}</h1>

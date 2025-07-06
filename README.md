@@ -31,4 +31,9 @@
 - Client Side Routing
   - Only a single component will load
 - Server Side Routing
+
   - Entire page will reload
+
+# react-lifecycle-methods-diagram
+
+![React Lifecycle Methods Diagram](./react-lifecycle-methods-diagram.png)
