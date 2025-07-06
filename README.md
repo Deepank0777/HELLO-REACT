@@ -25,3 +25,10 @@
 
 - useState()
 - useEffect()
+
+# Routing: 2 types of routing in web apps
+
+- Client Side Routing
+  - Only a single component will load
+- Server Side Routing
+  - Entire page will reload

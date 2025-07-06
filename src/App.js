@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
 import "./index.css";
 import Header from "./components/Header";
@@ -35,7 +35,15 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet /> {/*This is where the child components will be rendered */}
+      {/* <footer className="footer">
+        <div className="footer-links">
+          <a href="/">Home</a>
+          <a href="/about-us">About Us</a>
+          <a href="/contact-us">Contact Us</a>
+        </div>
+        <p>&copy; 2023 Your Company Name. All rights reserved.</p>
+      </footer> */}
     </div>
   );
 };
@@ -44,16 +52,21 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    // errorElement: <h1>Oops! Something went wrong.</h1>,
+    children: [
+      {
+        path: "/",
+        element: <Body />, // This is the default route for the app
+      },
+      {
+        path: "/about-us",
+        element: <About />,
+      },
+      {
+        path: "/contact-us",
+        element: <Contact />,
+      },
+    ],
     errorElement: <Error />,
-  },
-  {
-    path: "/about-us",
-    element: <About />,
-  },
-  {
-    path: "/contact-us",
-    element: <Contact />,
   },
 ]);
 
